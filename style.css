@@ -2,40 +2,8 @@
   font-family: "Raleway";
   src: url("fonts/Raleway/static/Raleway-Regular.ttf");
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 0px 40px 0px;
-}
-.container{
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px;
-}
-/* sections */
-section {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5em;
-}
-section #art1,aside {
-  background-color: #f2f2f2;
-  border-radius: 2em;
-  padding: 0px 20px 0px 20px;
-}
-
-#art1 {
-  width: 65%;
-  margin-right: 2em;
-}
-aside {
-  width: 30%;
-}
 /*polices*/
-p,
-h1,
-h2,
-h3 {
+body {
   font-family: "Raleway";
 }
 
@@ -61,6 +29,7 @@ i,
 nav {
   color: #0065fc;
 }
+
 .inscrire a{
   font-weight: 700;
   color: #0065fc;
@@ -70,6 +39,38 @@ aside a:link {
   text-decoration: none;
   color: black;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0px 40px 0px;
+}
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+/* sections */
+section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5em;
+}
+section #art1,aside {
+  background-color: #f2f2f2;
+  border-radius: 2em;
+  padding: 0px 20px 0px 20px;
+}
+
+#art1 {
+  width: 65%;
+  margin-right: 2em;
+}
+aside {
+  width: 30%;
+}
+
 /* Navigation */
 a:hover{
   text-decoration: none;
@@ -78,7 +79,7 @@ li a{
   padding: 20px;
   color: black;
   text-decoration-line: none;
-  font-size: 18px;
+  font-size: 15px;
   font-weight:500;
 }
 li a:hover {
@@ -172,6 +173,10 @@ form button {
 .btn:hover {
   color: #0065fc;
 }
+
+button.btn{
+  display: inline;
+}
 .icone {
   color: #0065fc;
   background-color: #deebff;
@@ -206,8 +211,7 @@ form button {
   }
 /* Hébergements */
 #titre-section{
-  visibility: hidden;
-  width: 0;
+ display:none;
 }
 .hebergements {
   display: flex;
@@ -220,6 +224,7 @@ form button {
   border-radius: 15px;
   margin-bottom: 3em;
   width: 30%;
+  box-shadow: 0px 0px 6px grey;
 }
 .texte-hebergement{
   padding-left: 8px;
@@ -267,6 +272,7 @@ form button {
   padding: 5px;
   border-radius: 15px;
   margin-bottom: 3em;
+  box-shadow: 0px 0px 6px grey;
 }
 .texte-carte-populaire {
   margin-left: 12px;
@@ -304,6 +310,8 @@ aside img {
   display: flex;
   flex-direction: column;
 }
+
+
 .colone a {
   height: 100%;
 }
@@ -313,6 +321,11 @@ aside img {
   border-radius: 30px;
   display: flex;
   flex-direction: column;
+}
+.activite-carte img {
+  width: 100%;
+  height:90%;
+  object-fit: cover;
 }
 .grande{
   height: 100%;
@@ -340,12 +353,6 @@ padding-left: 20px;
 height:10%;
 }
 
-.activite-carte img {
-  width: 100%;
-  height:90%;
-  object-fit: cover;
-}
-
 /* Footer */
 footer {
   background-color: #f2f2f2;
@@ -370,7 +377,7 @@ footer {
 
 /*Media queries */ 
   
-  @media all and (max-width: 992px) 
+  @media all and (max-width: 998px) 
   {
     section
     {
@@ -378,9 +385,14 @@ footer {
       flex-direction: column-reverse;
       justify-content: space-between;
     }
+    #hebergements-a-marseille{
+      margin-right: 45px;
+      margin-bottom: 0px;
+    }
     #art1,aside{
       width:100%;
       margin-bottom: 20px;
+      margin-right: 45px;
     }
     #filtres {
       display: flex;
@@ -392,7 +404,7 @@ footer {
     }
  
   }
-  @media all and (max-width: 600px)
+  @media all and (max-width: 746px)
   {
     header img {
       position: absolute;
@@ -403,8 +415,11 @@ footer {
     nav ul {
       flex-flow: wrap;
       width:100%;
+      padding-left: 0;
     }
-
+    .inscrire a {
+      padding-right: 2em;
+  }
     li a:hover{
       border:none;
     }
@@ -412,7 +427,7 @@ footer {
     nav li:nth-child(1) {
       order: 2;
       margin-top: 50px;
-      margin-left: -4em;
+      margin-left: -20px;
       flex: 50%;
       text-align: center;
       border-bottom: #f2f2f2 solid;
@@ -435,7 +450,7 @@ footer {
       text-align: center;
       border-bottom: #f2f2f2 solid;
       padding-bottom: 00.5em;
-      margin-right: -1em;
+      margin-right: -18px;
     }
     nav li:nth-child(2):hover {
       border-top: none;
@@ -448,9 +463,21 @@ footer {
       order: 1;
       flex: 100%;
       text-align: right;
-      padding-top: 1em;
+      padding-right: 15px;
     }
 
+    button.btn{
+      height: 33px;
+      margin-bottom: 3px;
+    }
+    section #art1,aside {
+      border-radius: 0;    
+      margin-left:-20px;
+      width:calc(100% + 40px);
+    }
+    section #art1{
+      background: none;
+    }
     .hebergements,
     .activites {
         display: flex;
@@ -462,11 +489,15 @@ footer {
     .hebergement-carte{
       width:100%;
     } 
-
-    .activite-carte img {
-      max-height: 150px;
-    }
-
+    .activite-carte {
+        margin-bottom: 1.5em;
+      }
+      .activite-carte img,.activite-carte.fort img, .activite-carte.frioul img, .activite-carte.derniere-col img {
+        height: 150px;
+      }
+      .bas{
+        margin-top:0px;
+      }
     .footer {
       display: flex;
       flex-wrap: wrap;
@@ -476,4 +507,26 @@ footer {
     .activite-carte,.colone{
       width:100%;
     }
+ }
+ @media all and (max-width: 540px)
+ {
+
+  #filtres button.btn:nth-child(4) {
+    margin-top:-10px;
+    margin-right:100%;
+    margin-bottom: 20px;
+  }
+
+    #filtres button.btn:nth-child(5) {
+          margin-bottom: 20px;
+          margin-top: -10px;
+        }
+  
+ }
+ @media all and (max-width: 376px){
+  
+  #filtres button.btn:nth-child(3) {
+    margin-bottom: 20px;
+    margin-top: -15px;
+  }
  }
